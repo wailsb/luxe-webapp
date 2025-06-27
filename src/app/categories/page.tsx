@@ -46,7 +46,7 @@ export default function Categories() {
       <div>
   
           {IsDesktop ? <Navbar /> : <NavbarPhone />}
-          <div className="mx-[10%]">
+          <div className="mx-[10%] mb-20">
             <h1 className="text-center text-4xl font-bold mt-10 mb-5">Categories</h1>
             <p className="text-center text-xs ">See all the collection we have offer for you</p>
             <div className={`${IsDesktop ? "grid grid-cols-2 gap-4" : "flex flex-col space-y-4"} justify-center mt-5 mb-10`}>
