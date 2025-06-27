@@ -31,6 +31,18 @@ export default function BestSeller() {
         imageUrl: "/Banner.png",
         price: 59.99,
         category: "Sneakers"
+    },
+    {
+        title: "Sport try",
+        imageUrl: "/Banner.png",
+        price: 59.99,
+        category: "Sneakers"
+    },
+    {
+        title: "Sport test",
+        imageUrl: "/Banner.png",
+        price: 59.99,
+        category: "Sneakers"
     }];
     useEffect(() => {
             setMounted(true);
@@ -48,9 +60,9 @@ export default function BestSeller() {
         }, []);
 
     return (
-        <div className={`flex flex-col mx-[10%] ${isDesktop?"mt-10":"mt-2"}`}>
+        <div className={`flex flex-col mx-[10%] mb-40 ${isDesktop?"mt-5":"mt-2"}`}>
             <h1 className="text-2xl font-bold text-center">Explore our best seller</h1>
-            <div className="overflow-x-scroll flex space-x-3 mt-5 mb-10">
+            <div className="overflow-x-scroll flex space-x-3 mt-5 mb-10 mx-auto max-w-full">
                 {bestSellers.map((i)=>{
                     return (
                         <BestSellerElem key={i.title} imageUrl={i.imageUrl} price={i.price} title={i.title} category={i.category}/>

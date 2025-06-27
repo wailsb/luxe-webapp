@@ -5,6 +5,7 @@ import NavbarPhone from "@/Components/phone/NavbarPhone";
 import Banner from "@/Components/shared/Banner";
 import Categories from "@/Sections/Categories";
 import BestSeller from "@/Sections/BestSeller";
+import Footer from "@/Sections/Footer";
 
 export default function Home() {
   const [IsDesktop, setIsDesktop] = React.useState<boolean>(true);
@@ -26,6 +27,7 @@ export default function Home() {
         <Banner imageUrl="/Banner.png" />
         <Categories />
         <BestSeller/>
+        <Footer />
       </div>
     );
 }

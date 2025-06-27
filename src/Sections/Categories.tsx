@@ -27,6 +27,16 @@ export default function Categories() {
         title: "Sneakers",
         imageUrl: "/Banner.png",
         dimentions: ["300px", "400px"]
+    },
+    {
+        title: "test",
+        imageUrl: "/Banner.png",
+        dimentions: ["300px", "400px"]
+    },
+    {
+        title: "testing",
+        imageUrl: "/Banner.png",
+        dimentions: ["300px", "400px"]
     }
 
     ]
@@ -45,7 +55,7 @@ export default function Categories() {
  // Initial check
     }, []);
     return (
-        <div className={`flex flex-col mx-[10%] ${isDesktop?"mt-10":"mt-2"}`}>
+        <div className={`flex flex-col mx-[10%] ${isDesktop?"mt-5":"mt-2"}`}>
             <div className="flex items-center mb-2">
                 <h1 className="text-2xl font-bold">Categories</h1>
                 <div className="flex-1"/>
@@ -54,7 +64,7 @@ export default function Categories() {
                 </Link>
             </div>
             <p className="text-xs">see all collection we have offer for you</p>
-            <div className="max-w-full overflow-x-scroll flex space-x-3 mt-5 mb-10">
+            <div className="max-w-full overflow-x-scroll flex space-x-3 mt-5 mx-auto">
                 {sampleList.map((i)=>{
                     return (
                             <CategElement key={i.title} imageUrl={i.imageUrl} title={i.title} dimentions={["200px", "300px"]}/>
