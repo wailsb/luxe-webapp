@@ -1,5 +1,5 @@
-import BestSellerElem from "@/Components/shared/BestSellerElem";
-import { BestSellerElemProps } from "@/Types/types";
+import ProductCard from "@/Components/shared/ProductCard";
+import { ProductsElemProps } from "@/Types/types";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -7,7 +7,7 @@ export default function BestSeller() {
     const [mounted, setMounted] = useState(false);
     const [isDesktop, setIsDesktop] = useState<boolean>(true);
 
-    const bestSellers: BestSellerElemProps[] = [
+    const bestSellers: ProductsElemProps[] = [
     {
         title: "Classic Tee",
         imageUrl: "/Banner.png",
@@ -65,7 +65,7 @@ export default function BestSeller() {
             <div className="overflow-x-scroll flex space-x-3 mt-5 mb-10 mx-auto max-w-full">
                 {bestSellers.map((i)=>{
                     return (
-                        <BestSellerElem key={i.title} imageUrl={i.imageUrl} price={i.price} title={i.title} category={i.category}/>
+                        <ProductCard key={i.title} imageUrl={i.imageUrl} price={i.price} title={i.title} category={i.category}/>
                     );
                 })}
             </div>

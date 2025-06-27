@@ -1,7 +1,7 @@
-import { BestSellerElemProps } from "@/Types/types";
+import { ProductsElemProps } from "@/Types/types";
 
 
-export default function BestSellerElem({title,imageUrl,price,category,dimentions=["200px","300px"]}:BestSellerElemProps) {
+export default function ProductCard({title,imageUrl,price,category,dimentions=["200px","300px"]}:ProductsElemProps) {
     return (
         <div className="flex flex-col">
             <div style={{backgroundImage:`url(${imageUrl})`,width:dimentions[0],height:dimentions[1]}} className="bg-cover bg-center shrink-0"/>

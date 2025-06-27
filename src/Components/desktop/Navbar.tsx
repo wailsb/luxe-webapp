@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -33,7 +34,7 @@ export default function Navbar() {
                     Home
                 </Link>
                 <div className="flex-1"/>
-                <Link href="/Catalog" className="text-black text-sm">
+                <Link href="/Products" className="text-black text-sm">
                     Catalog
                 </Link>
                 <div className="flex-1"/>

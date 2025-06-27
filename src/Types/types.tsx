@@ -3,7 +3,7 @@ export interface CategElem{
     imageUrl:string;
     dimentions?:Array<string>
 }
-export interface BestSellerElemProps {
+export interface ProductsElemProps {
     title: string;
     imageUrl: string;
     price?: number|null;

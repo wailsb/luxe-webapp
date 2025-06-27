@@ -1,3 +1,4 @@
+"use client";
 import CategElement from "@/Components/shared/CategElement";
 import { CategElem } from "@/Types/types";
 import Link from "next/link";
@@ -59,7 +60,7 @@ export default function Categories() {
             <div className="flex items-center mb-2">
                 <h1 className="text-2xl font-bold">Categories</h1>
                 <div className="flex-1"/>
-                <Link href="/Catalog" className="text-sm px-5 border border-b-slate-950 font-semibold rounded-sm">
+                <Link href="/Categories" className="text-sm px-5 border border-b-slate-950 font-semibold rounded-sm">
                     see all
                 </Link>
             </div>

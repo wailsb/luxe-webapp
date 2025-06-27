@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import {useState,useEffect} from "react";
 import Navbar from "@/Components/desktop/Navbar";
 import NavbarPhone from "@/Components/phone/NavbarPhone";
 import Banner from "@/Components/shared/Banner";
@@ -8,8 +8,8 @@ import BestSeller from "@/Sections/BestSeller";
 import Footer from "@/Sections/Footer";
 
 export default function Home() {
-  const [IsDesktop, setIsDesktop] = React.useState<boolean>(true);
-  React.useEffect(() => {
+  const [IsDesktop, setIsDesktop] = useState<boolean>(true);
+  useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 768);
     };
