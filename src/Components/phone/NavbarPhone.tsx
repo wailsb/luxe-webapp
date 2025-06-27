@@ -24,18 +24,31 @@ export default function NavbarPhone() {
     }, []);
 
     if (!mounted) return null; // Prevent SSR mismatch
-
+    function dropMenu() {
+        const dropdown = document.getElementById("dropdown");
+        if (dropdown) {
+            dropdown.classList.toggle("hidden");
+            dropdown.classList.toggle("flex");
+        }
+    }
     return (
-        <nav className="flex justify-center">
-            <div className="flex flex-1 justify-start items-center">
-                <div className="ml-5" onClick={() => {}} >
-                    <Image src="/icons/list.png" alt="Menu" style={{ objectFit: "contain", width: `15px`, height: `15px` }} width={15} height={15} />
+        <nav className="flex flex-col justify-center">
+            <div className="flex justify-center">
+                <div className="flex flex-1 justify-start items-center">
+                    <div className="ml-5" onClick={dropMenu} >
+                        <Image src="/icons/list.png" alt="Menu" style={{ objectFit: "contain", width: `15px`, height: `15px` }} width={15} height={15} />
+                    </div>
                 </div>
-            </div>
-            <Link href="/" className="items-center">
-                <Image src="/logo.png" alt="Description" style={{ objectFit: "contain", width: `${widthNav}px`, height: `${heightNav}px` }} width={widthNav} height={heightNav} />
-            </Link>
+                <Link href="/" className="items-center">
+                    <Image src="/logo.png" alt="Description" style={{ objectFit: "contain", width: `${widthNav}px`, height: `${heightNav}px` }} width={widthNav} height={heightNav} />
+                </Link>
             <div className="flex flex-1"/>
+            </div>
+            <ul id="dropdown" className="hidden flex-col flex-1 justify-end items-center">
+                <Link className="py-2 px-5 text-black" href="/Catalog">Catalog</Link>
+                <Link className="py-2 px-5 text-black" href="/About">About</Link>
+                <Link className="py-2 px-5 text-black" href="/Contact">Contact</Link>
+            </ul>
         </nav>
     );
 }

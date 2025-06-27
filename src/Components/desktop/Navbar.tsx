@@ -29,15 +29,15 @@ export default function Navbar() {
         <nav className="flex justify-center">
             <div className="flex flex-1 justify-around items-center">
                 <div className="flex-2"/>
-                <Link href="/" className="text-black text-lg font-semibold">
+                <Link href="/" className="text-black text-sm">
                     Home
                 </Link>
                 <div className="flex-1"/>
-                <Link href="/Catalog" className="text-black text-lg font-semibold">
+                <Link href="/Catalog" className="text-black text-sm">
                     Catalog
                 </Link>
                 <div className="flex-1"/>
-                <Link href="/About" className="text-black text-lg font-semibold">
+                <Link href="/About" className="text-black text-sm">
                     About
                 </Link>
                 <div className="flex-2"/>

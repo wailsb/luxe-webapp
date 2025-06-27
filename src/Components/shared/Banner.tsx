@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 
 export default function Banner({ imageUrl }: { imageUrl: string }) {
     const [windowHeight, setWindowHeight] = useState<number | null>(null);
-
+    const [IsDesktop, setIsDesktop] = useState<boolean>(true);
     useEffect(() => {
         const handleResize = () => {
             setWindowHeight(window.innerHeight * 0.8); // Set height to 80% of the window height
+            setIsDesktop(window.innerWidth >= 1024);
         };
 
         handleResize();
@@ -25,7 +26,7 @@ export default function Banner({ imageUrl }: { imageUrl: string }) {
             className="bg-cover bg-center bg-gray-200 p-4 text-center relative"
         >
             <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-                <h1 className="text-4xl font-bold text-white mb-4">Soft, Smooth & comfy</h1>
+                <h1 className={`text-${IsDesktop ? 4 : 2}xl font-bold text-white mb-4`}>Soft, Smooth & comfy</h1>
                 <Link href="/Catalog" className="text-black py-2.5 px-5 bg-white rounded-xl text-sm font-semibold">
                     shop now
                 </Link>
