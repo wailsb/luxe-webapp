@@ -6,6 +6,7 @@ import { getProductById } from "@/sanity/sanity-tools";
 import { ProductsElemProps } from "@/Types/types";
 import Image from "next/image";
 import StatusBar from "@/Components/shared/StatusBar";
+import Footer from "@/Sections/Footer";
 
 interface ProductsPageProps {
     params: Promise<{ id: string }>;
@@ -92,6 +93,7 @@ export default function ProductsPage({ params }: ProductsPageProps) {
                     </div>
                 </div>
             </div>
+            <Footer/>
             
         </div>
     );
