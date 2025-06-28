@@ -54,7 +54,7 @@ export default function Navbar() {
                 </Link>
                 <div className="flex-1"/>
                 <Link href="/#wallet" className="text-black text-lg font-semibold">
-                    <Image src="/icons/wallet.png" alt="wallet" style={{ objectFit: "contain", width: `20px`, height: `20px` }} width={20} height={20} />
+                    <Image src="/icons/cart.png" alt="cart" style={{ objectFit: "contain", width: `20px`, height: `20px` }} width={20} height={20} />
                 </Link>
                 <div className="flex-4"/>
             </div>

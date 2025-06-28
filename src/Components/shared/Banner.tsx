@@ -27,7 +27,7 @@ export default function Banner({ imageUrl }: { imageUrl: string }) {
         >
             <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
                 <h1 className={`text-${IsDesktop ? 4 : 2}xl font-bold text-white mb-4`}>Soft, Smooth & comfy</h1>
-                <Link href="/Catalog" className="text-black py-2.5 px-5 bg-white rounded-xl text-sm font-semibold">
+                <Link href="/Catalog" className="text-black py-2.5 px-5 bg-white rounded-sm text-sm">
                     shop now
                 </Link>
             </div>

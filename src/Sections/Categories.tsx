@@ -31,9 +31,9 @@ export default function Categories() {
     return (
         <div className={`flex flex-col mx-[10%] ${isDesktop?"mt-5":"mt-2"}`}>
             <div className="flex items-center mb-2">
-                <h1 className="text-2xl font-bold">Categories</h1>
+                <h1 className="text-4xl">Categories</h1>
                 <div className="flex-1"/>
-                <Link href="/Categories" className="text-sm px-5 border border-b-slate-950 font-semibold rounded-sm">
+                <Link href="/Categories" className="text-xs px-5 border border-b-slate-950 font-semibold rounded-sm">
                     see all
                 </Link>
             </div>
