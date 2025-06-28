@@ -34,14 +34,38 @@ export async function getProductsByCategory(categoryId: string) {
                 title
             },
             description,
-            image{
+            images[] {
                 asset->{
-                    _id,
-                    url
+                  _id,
+                  url
+                    }
+                }
+            }`,
+        { categoryId }
+    );
+}
+export async function getProductById(productId: string) {
+    const client = createClient(config);
+    return client.fetch(
+        groq`*[_type == "product" && _id == $productId]{
+            _id,
+            title,
+            price,
+            isBestSeller,
+            isPriceShown,
+            category->{
+                _id,
+                title
+            },
+            description,
+            images[] {
+                asset->{
+                  _id,
+                  url
                 }
             }
         }`,
-        { categoryId }
+        { productId }
     );
 }
 export async function getAllProducts() {
@@ -58,10 +82,10 @@ export async function getAllProducts() {
                 title
             },
             description,
-            image{
+            images[] {
                 asset->{
-                    _id,
-                    url
+                  _id,
+                  url
                 }
             }
         }`
@@ -81,7 +105,7 @@ export async function getBestSellers() {
                 title
             },
             description,
-            image{
+            images[] {
                 asset->{
                     _id,
                     url

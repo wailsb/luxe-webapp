@@ -35,13 +35,13 @@ export default function Categories() {
           <div className="mx-[10%] mb-20">
             <h1 className="text-center text-4xl font-bold mt-10 mb-5">Categories</h1>
             <p className="text-center text-xs ">See all the collection we have offer for you</p>
-            <div className={`${IsDesktop ? "grid grid-cols-2 gap-4" : "flex flex-col space-y-4"} justify-center mt-5 mb-10`}>
+            <div className={`${IsDesktop ? "grid grid-cols-2 gap-4" : "flex flex-col space-y-4"} justify-center justify-items-center mt-5 mb-10`}>
               {dataArray.map((category) => (
                 <CategElement
                   key={category._id}
                   title={category.title}
                   imageUrl={category.image.asset.url} 
-                  dimentions={["300px", "200px"]} 
+                  dimentions={["100%", "200px"]} 
                 />
               ))}
             </div>

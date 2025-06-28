@@ -34,10 +34,10 @@ export default function BestSeller() {
         <div className={`flex flex-col mx-[10%] mb-40 ${isDesktop?"mt-5":"mt-2"}`}>
             <h1 className="text-2xl font-bold text-center">Explore our best seller</h1>
             <div className="overflow-x-scroll flex space-x-3 mt-5 mb-10 mx-auto max-w-full">
-                {dataArray.map((i)=>{
-                    return (
-                        <ProductCard key={i.title} imageUrl={i.image.asset.url} price={i.price} title={i.title} category={(i.category? i.category.title : null)}/>
-                    );
+                {dataArray.map((i,index)=>{
+                    if(i.isBestSeller){
+                        return (<ProductCard key={index} id={i._id} imageUrl={(i.images!=null ? i.images[0].asset.url : "")} price={i.price} title={i.title} category={(i.category? i.category.title : null)} dimentions={["300px", "200px"]} />);
+                    }
                 })}
             </div>
             <div className="flex justify-center">

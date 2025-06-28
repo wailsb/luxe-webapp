@@ -34,9 +34,19 @@ const Product={
         type: "boolean",
         },
         {
-        name: "image",
-        title: "Image",
-        type: "image",
+        name: "images",
+        title: "Images",
+        type: "array",
+        of: [
+            { 
+                name: "image",
+                title: "Image",
+                type: "image",
+                options: {
+                    hotspot: true,
+                },
+             }
+        ],
         },
     ],
 }
