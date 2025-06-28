@@ -33,7 +33,7 @@ export default function Categories() {
             <div className="flex items-center mb-2">
                 <h1 className="text-4xl">Categories</h1>
                 <div className="flex-1"/>
-                <Link href="/Categories" className="text-xs px-5 border border-b-slate-950 font-semibold rounded-sm">
+                <Link href="/Categories" className="text-sm px-5 border border-b-slate-950 rounded-sm">
                     see all
                 </Link>
             </div>

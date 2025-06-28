@@ -40,7 +40,7 @@ export default function BestSeller() {
                 })}
             </div>
             <div className="flex justify-center">
-                <Link href="/Products" className="text-sm px-5 border border-b-slate-950 font-semibold rounded-sm">
+                <Link href="/Products" className="text-sm px-5 border border-b-slate-950 rounded-sm">
                         see all
                 </Link>
             </div>
