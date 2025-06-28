@@ -1,5 +1,6 @@
 "use client";
 import CategElement from "@/Components/shared/CategElement";
+import getCategories from "@/sanity/sanity-tools";
 import { CategElem } from "@/Types/types";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -7,40 +8,11 @@ import { useEffect, useState } from "react";
 export default function Categories() {
     const [mounted, setMounted] = useState(false);
     const [isDesktop, setIsDesktop] = useState<boolean>(true);
-
-    const sampleList:Array<CategElem>=[
-        {
-        title: "T-Shirts",
-        imageUrl: "/Banner.png",
-        dimentions: ["300px", "400px"]
-    },
-    {
-        title: "Jeans",
-        imageUrl: "/Banner.png",
-        dimentions: ["300px", "400px"]
-    },
-    {
-        title: "Hoodies",
-        imageUrl: "/Banner.png",
-        dimentions: ["300px", "400px"]
-    },
-    {
-        title: "Sneakers",
-        imageUrl: "/Banner.png",
-        dimentions: ["300px", "400px"]
-    },
-    {
-        title: "test",
-        imageUrl: "/Banner.png",
-        dimentions: ["300px", "400px"]
-    },
-    {
-        title: "testing",
-        imageUrl: "/Banner.png",
-        dimentions: ["300px", "400px"]
+    const [dataArray, setDataArray] = useState<CategElem[]>([]);
+    async function fetchCategories() {
+        const data = await getCategories();
+        setDataArray(data);
     }
-
-    ]
     useEffect(() => {
         setMounted(true);
         const handleResize = () => {
@@ -50,6 +22,7 @@ export default function Categories() {
         if (mounted) {
             handleResize();
         }
+        fetchCategories();
         return () => {
             window.removeEventListener("resize", handleResize);
         };
@@ -66,9 +39,9 @@ export default function Categories() {
             </div>
             <p className="text-xs">see all collection we have offer for you</p>
             <div className="max-w-full overflow-x-scroll flex space-x-3 mt-5 mx-auto">
-                {sampleList.map((i)=>{
+                {dataArray.map((i)=>{
                     return (
-                            <CategElement key={i.title} imageUrl={i.imageUrl} title={i.title} dimentions={["200px", "300px"]}/>
+                            <CategElement key={i._id} imageUrl={i.image.asset.url} title={i.title} dimentions={["200px", "300px"]}/>
                         );
                     
                 })}

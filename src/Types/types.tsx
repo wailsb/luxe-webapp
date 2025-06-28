@@ -1,12 +1,21 @@
+export interface SanityImageAsset {
+    asset: {
+        _ref?: string;
+        _type?: string;
+        url?: string;
+    };
+}
+
 export interface CategElem{
+    _id?: string;
     title:string;
-    imageUrl:string;
-    dimentions?:Array<string>
+    image:SanityImageAsset;
+    Description?:string;
 }
 export interface ProductsElemProps {
+    _id?: string;
     title: string;
-    imageUrl: string;
+    image: SanityImageAsset;
     price?: number|null;
-    dimentions?:Array<string>;
-    category?: string;
+    category?: CategElem|null;
 }

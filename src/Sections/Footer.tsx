@@ -38,7 +38,7 @@ export default function Footer() {
                         <Link href="/Categories" className="text-black py-2 hover:underline">
                             Categories
                         </Link>
-                        <Link href="/Catalog" className="text-black py-2 hover:underline">
+                        <Link href="/Products" className="text-black py-2 hover:underline">
                             Catalog
                         </Link>
                         <Link href="/" className="text-black py-2 hover:underline">
