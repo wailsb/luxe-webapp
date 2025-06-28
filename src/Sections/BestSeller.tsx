@@ -31,7 +31,7 @@ export default function BestSeller() {
 
     return (
         <div className={`flex flex-col mx-[10%] mb-40 ${isDesktop?"mt-5":"mt-2"}`}>
-            <h1 className="text-2xl font-semibold text-center">Explore our best seller</h1>
+            <h1 className="text-2xl font-[500] text-center">Explore our best seller</h1>
             <div className="overflow-x-scroll flex space-x-3 mt-5 mb-10 mx-auto max-w-full">
                 {dataArray.map((i)=>{
                     if(i.isBestSeller){
