@@ -5,6 +5,7 @@ import NavbarPhone from "@/Components/phone/NavbarPhone";
 import { getProductById } from "@/sanity/sanity-tools";
 import { ProductsElemProps } from "@/Types/types";
 import Image from "next/image";
+import StatusBar from "@/Components/shared/StatusBar";
 
 interface ProductsPageProps {
     params: Promise<{ id: string }>;
@@ -38,6 +39,7 @@ export default function ProductsPage({ params }: ProductsPageProps) {
 
     return (
         <div>
+            <StatusBar />
             {isDesktop ? <Navbar /> : <NavbarPhone />}
             <div className={`mx-[10%] my-8 flex ${isDesktop ? "" : "flex-col"} gap-8`}>
                 <div className="flex-4 flex flex-col gap-4">
@@ -52,7 +54,7 @@ export default function ProductsPage({ params }: ProductsPageProps) {
                             />
                         ) : null}
                     </div>
-                    <div className="flex w-full h-20 gap-1 imagesGallery overflow-x-scroll">
+                    <div className="flex w-full gap-1 imagesGallery overflow-x-scroll">
                         {singleProduct?.images && singleProduct.images.length > 0 ? (
                             singleProduct.images.map((image, index) => (
                         <Image
@@ -60,9 +62,9 @@ export default function ProductsPage({ params }: ProductsPageProps) {
                             onClick={() => setCurrentChosenImage(index)}
                             src={image.asset?.url ? image.asset.url : ""}
                             alt={singleProduct.title}
-                            className="h-auto w-auto"
-                            width={600}
-                            height={400}
+                            className="h-[120px] w-[120px]"
+                            width={120}
+                            height={120}
                         />
                             ))
                         ) : <></>}
@@ -70,13 +72,13 @@ export default function ProductsPage({ params }: ProductsPageProps) {
                     </div>
                 
                 </div>
-                <div className="flex-5 py-10">
-                    <p className="text-xs">{singleProduct?.category?.title}</p>
-                    <h1 className="text-3xl font-bold">{singleProduct?.title}</h1>
-                    <div className="w-full border-y-2 border-gray-800">
+                <div className={`flex-5 ${isDesktop ? "py-4" : "pb-4"}`}>
+                    <p className={`text-sm ${isDesktop ? "my-4" : "mb-4"}`}>{singleProduct?.category?.title}</p>
+                    <h1 className="text-3xl font-bold mb-4">{singleProduct?.title}</h1>
+                    <div className="w-full border-y-2 border-gray-800 py-4">
                         <p className="text-sm my-4">{singleProduct?.description}</p>
                     </div>
-                    <p className="text-2xl font-bold text-right">
+                    <p className="text-2xl font-bold text-right mt-4">
                         {singleProduct?.price ? `$${singleProduct.price.toFixed(2)}` : "Price not available"}
                     </p>
                     <div className="flex items-center justify-center gap-4">

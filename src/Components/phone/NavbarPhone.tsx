@@ -47,7 +47,7 @@ export default function NavbarPhone() {
             </div>
             <ul id="dropdown" className="hidden flex-col flex-1 justify-end items-center">
                 <Link className="py-2 px-5 text-black" href="/Products">Catalog</Link>
-                <Link className="py-2 px-5 text-black" href="/About">About</Link>
+                <Link className="py-2 px-5 text-black" href="/">Tos</Link>
                 <Link className="py-2 px-5 text-black" href="/Contact">Contact</Link>
             </ul>
         </nav>

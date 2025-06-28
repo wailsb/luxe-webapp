@@ -2,6 +2,7 @@
 import Navbar from "@/Components/desktop/Navbar";
 import NavbarPhone from "@/Components/phone/NavbarPhone";
 import CategElement from "@/Components/shared/CategElement";
+import StatusBar from "@/Components/shared/StatusBar";
 import getCategories from "@/sanity/sanity-tools";
 import Footer from "@/Sections/Footer";
 import { CategElem } from "@/Types/types";
@@ -30,7 +31,8 @@ export default function Categories() {
   
     return (
       <div>
-  
+        
+          <StatusBar />
           {IsDesktop ? <Navbar /> : <NavbarPhone />}
           <div className="mx-[10%] mb-20">
             <h1 className="text-center text-4xl font-bold mt-10 mb-5">Categories</h1>

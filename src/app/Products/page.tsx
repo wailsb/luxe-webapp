@@ -2,6 +2,7 @@
 import Navbar from "@/Components/desktop/Navbar";
 import NavbarPhone from "@/Components/phone/NavbarPhone";
 import ProductCard from "@/Components/shared/ProductCard";
+import StatusBar from "@/Components/shared/StatusBar";
 import { getAllProducts } from "@/sanity/sanity-tools";
 import Footer from "@/Sections/Footer";
 import { ProductsElemProps } from "@/Types/types";
@@ -31,6 +32,7 @@ export default function Products() {
     }, []);
     return (
       <div>
+        <StatusBar />
         {IsDesktop ? <Navbar /> : <NavbarPhone />}
         <div className="mx-[10%] mb-20">
           <h1 className="text-center text-4xl font-bold mt-10 mb-5">All Products</h1>

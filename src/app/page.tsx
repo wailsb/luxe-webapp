@@ -6,6 +6,7 @@ import Banner from "@/Components/shared/Banner";
 import Categories from "@/Sections/Categories";
 import BestSeller from "@/Sections/BestSeller";
 import Footer from "@/Sections/Footer";
+import StatusBar from "@/Components/shared/StatusBar";
 
 export default function Home() {
   const [IsDesktop, setIsDesktop] = useState<boolean>(true);
@@ -23,10 +24,11 @@ export default function Home() {
   return (
     <div>
 
+        <StatusBar />
         {IsDesktop ? <Navbar /> : <NavbarPhone />}
         <Banner imageUrl="/Banner.png" />
         <Categories />
-        <BestSeller/>
+        <BestSeller />
         <Footer />
       </div>
     );

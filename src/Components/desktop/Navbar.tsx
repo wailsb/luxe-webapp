@@ -38,8 +38,8 @@ export default function Navbar() {
                     Catalog
                 </Link>
                 <div className="flex-1"/>
-                <Link href="/About" className="text-black text-sm">
-                    About
+                <Link href="/" className="text-black text-sm">
+                    Tos
                 </Link>
                 <div className="flex-2"/>
             </div>
