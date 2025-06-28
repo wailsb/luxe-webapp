@@ -21,7 +21,7 @@ export default function Footer() {
             <div className={`flex ${isDesktop? "flex-row" : "flex-col"} justify-center items-center mb-4`}>
                 <div className="flex flex-col mx-auto">
                     <Link href="/" className={`text-2xl font-bold mb-2 ${isDesktop ? "self-start" : "self-center"}`}>
-                        <Image src="/Logo.png" alt="LUXE REO Logo" width={100} height={50} />
+                        <Image src="/logo.png" alt="LUXE REO Logo" width={100} height={50} />
                     </Link>
                     <p className="text-xs mb-2">Be the first to know about new styles and special offers.</p>
                 </div>
