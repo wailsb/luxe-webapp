@@ -80,7 +80,7 @@ export default function ProductsPage({ params }: ProductsPageProps) {
                         <p className="text-sm my-4">{singleProduct?.description}</p>
                     </div>
                     <p className="text-2xl font-bold text-right mt-4">
-                        {singleProduct?.price ? `$${singleProduct.price.toFixed(2)}` : "Price not available"}
+                        {singleProduct?.price ? `${singleProduct.price.toFixed(2)} DZD` : "Price not available"}
                     </p>
                     <div className="flex items-center justify-center gap-4">
                         <button className="bg-transparent border border-black text-black px-4 py-2 rounded-md mt-4">

@@ -35,7 +35,7 @@ export default function BestSeller() {
             <div className="overflow-x-scroll flex space-x-3 mt-5 mb-10 mx-auto max-w-full">
                 {dataArray.map((i)=>{
                     if(i.isBestSeller){
-                        return (<ProductCard key={i._id} id={i._id} imageUrl={(i.images!=null ? i.images[0].asset.url : "")} price={i.isPriceShown==true ? i.price : null} title={i.title} category={(i.category? i.category.title : null)} dimentions={["300px", "400px"]} />);
+                        return (<ProductCard key={i._id} id={i._id} imageUrl={(i.images!=null ? i.images[0].asset.url : "")} price={null} title={i.title} category={(i.category? i.category.title : null)} dimentions={["300px", "300px"]} />);
                     }
                 })}
             </div>
