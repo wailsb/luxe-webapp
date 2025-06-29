@@ -11,8 +11,8 @@ export default function NavbarPhone() {
 
     function calculateWidth() {
         const ScreenWidth = window.innerWidth;
-        setHeight((ScreenWidth * 15) / 100); // Increased logo height
-        return (ScreenWidth * 22) / 100;     // Increased logo width
+        setHeight((ScreenWidth * 22) / 100); // Even bigger logo height
+        return (ScreenWidth * 32) / 100;     // Even bigger logo width
     }
 
     useEffect(() => {
@@ -29,15 +29,15 @@ export default function NavbarPhone() {
 
     return (
         <nav className="flex flex-col justify-center">
-            <div className="flex justify-center h-24"> {/* Increased navbar height */}
+            <div className="flex justify-center h-32"> {/* Even bigger navbar height */}
                 <div className="flex flex-1 justify-start items-center">
-                    <div className="ml-8" onClick={() => setSideOpen(true)}>
+                    <div className="ml-12" onClick={() => setSideOpen(true)}>
                         <Image
                             src="/icons/list.png"
                             alt="Menu"
-                            style={{ objectFit: "contain", width: `32px`, height: `32px` }}
-                            width={32}
-                            height={32}
+                            style={{ objectFit: "contain", width: `48px`, height: `48px` }}
+                            width={48}
+                            height={48}
                         />
                     </div>
                 </div>
@@ -58,22 +58,22 @@ export default function NavbarPhone() {
             </div>
             {/* Side Navbar */}
             <div
-                className={`fixed top-0 left-0 h-full w-4/5 max-w-md bg-white shadow-lg z-50 transform transition-transform duration-300 ${
+                className={`fixed top-0 left-0 h-full w-[90vw] max-w-xl bg-white shadow-2xl z-50 transform transition-transform duration-300 ${
                     sideOpen ? "translate-x-0" : "-translate-x-full"
-                } flex flex-col pt-28`} // More padding top for bigger navbar
-                style={{ minWidth: "260px" }}
+                } flex flex-col pt-40`} // More padding top for bigger navbar
+                style={{ minWidth: "320px" }}
             >
-                <button className="self-end mr-8 mb-8" onClick={() => setSideOpen(false)}>
-                    <span className="text-4xl">&times;</span>
+                <button className="self-end mr-12 mb-12" onClick={() => setSideOpen(false)}>
+                    <span className="text-5xl">&times;</span>
                 </button>
-                <Link className="py-5 px-8 text-xl text-black" href="/Products" onClick={() => setSideOpen(false)}>Catalog</Link>
-                <Link className="py-5 px-8 text-xl text-black" href="/" onClick={() => setSideOpen(false)}>Tos</Link>
-                <Link className="py-5 px-8 text-xl text-black" href="/Contact" onClick={() => setSideOpen(false)}>Contact</Link>
+                <Link className="py-7 px-12 text-2xl text-black" href="/Products" onClick={() => setSideOpen(false)}>Catalog</Link>
+                <Link className="py-7 px-12 text-2xl text-black" href="/" onClick={() => setSideOpen(false)}>Tos</Link>
+                <Link className="py-7 px-12 text-2xl text-black" href="/Contact" onClick={() => setSideOpen(false)}>Contact</Link>
             </div>
             {/* Optional overlay */}
             {sideOpen && (
                 <div
-                    className="fixed inset-0 bg-black bg-opacity-30 z-40"
+                    className="fixed inset-0 bg-black bg-opacity-40 z-40"
                     onClick={() => setSideOpen(false)}
                 />
             )}
