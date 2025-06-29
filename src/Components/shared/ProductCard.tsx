@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function ProductCard({id,title,imageUrl,price,category,dimentions=["200px","300px"]}:{id?:string,title:string,imageUrl?:string,price?:number|null,category?:string|null,dimentions?:Array<string>}) {
+export default function ProductCard({id,title,imageUrl,price,category,dimentions=["300px","400px"]}:{id?:string,title:string,imageUrl?:string,price?:number|null,category?:string|null,dimentions?:Array<string>}) {
     return (
         <Link href={`/Products/${id}`}>
             <div className="flex flex-col">
